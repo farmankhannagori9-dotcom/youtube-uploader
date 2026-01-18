@@ -1,4 +1,5 @@
-name: Build
+name: farman concurrency:
+  
 
 on:
   pull_request:
@@ -17,3 +18,16 @@ jobs:
       - run: npm ci
       - name: Build
         run: npm run build
+
+
+import { comment } from 'youtube-videos-uploader' //Typescript
+//OR
+const { comment } = require('youtube-videos-uploader'); //vanilla javascript
+ 
+const credentials = { email: 'Your Email', pass: 'Your Password', recoveryemail: 'Your Recovery Email' }
+  
+const comment1 = { link: 'https://www.youtube.com/watch?v=jEevRjRglFY', comment: 'Your comment', pin: false }
+
+comment(credentials, [comment1]).then(console.log)  
+//OR
+comment(credentials, [comment1], {headless:false}).then(console.log)
